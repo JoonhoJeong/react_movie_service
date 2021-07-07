@@ -4,7 +4,6 @@ import {Descriptions, Rate} from 'antd';
 function MovieInfo(props) {
   let movie = props.movie;
 
-  console.log("JJH: " + movie.vote_average);
   return (
     <div>
       <Descriptions title="Movie Info" bordered>

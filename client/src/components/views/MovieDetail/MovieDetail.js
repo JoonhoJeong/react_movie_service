@@ -3,8 +3,9 @@ import {API_URL, API_KEY, IMAGE_BASE_URL} from '../../Config';
 import MainImage from '../LandingPage/Sections/MainImage';
 import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
-import {Row} from 'antd';
+import {Row, Tabs} from 'antd';
 import Favorite from './Sections/Favorite';
+import ShowVideo from './Sections/ShowVideo';
 
 
 function MovieDetail(props) {
@@ -53,7 +54,16 @@ function MovieDetail(props) {
         </div>
 
         {/* Movie Info */}
-        <MovieInfo movie={Movie}/>
+        <Tabs defaultActiveKey="1">
+          <Tabs.TabPane tab="Movie Info" key="1">
+            <MovieInfo movie={Movie}/>
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Video" key="2">
+            Content of Tab Pane 2
+            <ShowVideo movieId={movieId} Movie={Movie}/>
+          </Tabs.TabPane>
+        </Tabs>
+        
         <br />    
         
         {/* Actors Grid */}
